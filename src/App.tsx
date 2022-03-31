@@ -1,24 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/styles.scss'
+import Navbar from './components/navbar';
+import Section from './components/section';
+import Usuario from './components/usuario';
+import SideBar from './components/sidebar';
+import Banner from './components/banner';
+import MainHero from './components/mainHero';
+import Footer from './components/footer';
+import OptionBox from './components/optionBox';
+import CheckBox from './components/checkBox';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Navbar>
+        <Usuario/>
+        <Banner/>
+     </Navbar>
+     <Section>
+        <SideBar>
+          <OptionBox/>
+          <OptionBox/>
+          <OptionBox/>
+        </SideBar>
+        <MainHero>
+          <CheckBox>
+          </CheckBox>
+        </MainHero>
+     </Section>
+     <Footer/>
     </div>
   );
 }

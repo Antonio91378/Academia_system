@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.App {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 1px red;
+  min-height: 80px;
+  height: 19vh;
+  width: 70%;
+  margin: 0px auto;
+  .usuario {
+    background-color: red;
+    width: 13vw;
+    height: 100%;
+  }
+}
+.section {
+  display: flex;
+  border: 1px solid purple;
+  height: 66vh;
+  width: 70%;
+  margin: 0px auto;
+  .sidebar {
+    border: 1px solid green;
+    width: 13vw;
+    display: flex;
+    flex-direction: column;
+    .box {
+      border: 1px solid rgb(5, 96, 90);
+      height: 8%;
+    }
+  }
+  .MainHero {
+    border: 1px solid rgb(126, 176, 25);
+    display: flex;
+    flex-direction: column;
+    width: 57vw;
+    .checkBox {
+      width: 40vw;
+      border: 1px solid rgb(176, 25, 116);
+      margin: 0 auto;
+      margin-top: 8% !important;
+      height: 30%;
+    }
+  }
+}
+.footer {
+  display: flex;
+  border: 1px solid rgb(185, 99, 185);
+  height: 15vh;
+  width: 70%;
+  margin: 0px auto;
+}
