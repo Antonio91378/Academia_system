@@ -1,14 +1,15 @@
 import React from 'react';
 
 interface CheckBoxProps {
-    children: React.ReactNode;
+    
 }
 
 const CheckBox: React.FC<CheckBoxProps> = ({ children }) => {
     return (
       <div className="checkBox">
-          <p>checkbox</p>
-          {children}
+          <input placeholder='Digite sua senha' type="text" />
+          <div className="estadoCheck">
+          </div>
       </div>
     );
 };

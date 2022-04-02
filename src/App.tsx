@@ -1,35 +1,23 @@
 import React from 'react';
-import './styles/styles.scss'
-import Navbar from './components/navbar';
-import Section from './components/section';
-import Usuario from './components/usuario';
-import SideBar from './components/sidebar';
-import Banner from './components/banner';
-import MainHero from './components/mainHero';
-import Footer from './components/footer';
-import OptionBox from './components/optionBox';
-import CheckBox from './components/checkBox';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
+import Principal from './pages/Pincipal';
+import Config from './pages/Config';
+import Pesquisar from './pages/Pesquisar';
 
 function App() {
   return (
-    <div className="App">
-     <Navbar>
-        <Usuario/>
-        <Banner/>
-     </Navbar>
-     <Section>
-        <SideBar>
-          <OptionBox/>
-          <OptionBox/>
-          <OptionBox/>
-        </SideBar>
-        <MainHero>
-          <CheckBox>
-          </CheckBox>
-        </MainHero>
-     </Section>
-     <Footer/>
-    </div>
+      <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Principal/>}/>
+            <Route path='/config' element={<Config/>}/>
+            <Route path='/pesquisar' element={<Pesquisar/>}/>
+        </Routes>
+      </BrowserRouter>
   );
 }
 

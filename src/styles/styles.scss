@@ -57,11 +57,31 @@ code {
     flex-direction: column;
     width: 57vw;
     .checkBox {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
       width: 40vw;
       border: 1px solid rgb(176, 25, 116);
       margin: 0 auto;
       margin-top: 8% !important;
       height: 30%;
+      input {
+        width: 60%;
+        height: 6vh;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      .estadoCheck {
+        background-color: blueviolet;
+        width: 17%;
+        height: 6vh;
+      }
+    }
+    .listaBox {
+      width: 40vw;
+      border: 1px solid rgb(136, 176, 25);
+      margin: 0 auto;
+      height: 60%;
     }
   }
 }

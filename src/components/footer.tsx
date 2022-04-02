@@ -4,7 +4,7 @@ interface FooterProps {
 
 }
 
-const Footer: React.FC<FooterProps> = ({  }) => {
+const Footer: React.FC<FooterProps> = () => {
     return (
         <div className="footer">
             <p>footer</p>
