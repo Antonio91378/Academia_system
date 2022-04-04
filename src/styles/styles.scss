@@ -30,7 +30,7 @@ code {
   width: 70%;
   margin: 0px auto;
   .usuario {
-    background-color: red;
+    border: solid 1px red;
     width: 13vw;
     height: 100%;
   }
@@ -52,10 +52,14 @@ code {
     }
   }
   .MainHero {
+    overflow: scroll;
     border: 1px solid rgb(126, 176, 25);
     display: flex;
     flex-direction: column;
     width: 57vw;
+    align-items: center;
+    justify-content: center;
+
     .checkBox {
       display: flex;
       justify-content: space-around;
@@ -72,7 +76,7 @@ code {
         text-align: center;
       }
       .estadoCheck {
-        background-color: blueviolet;
+        border: solid 1px red;
         width: 17%;
         height: 6vh;
       }
@@ -80,8 +84,79 @@ code {
     .listaBox {
       width: 40vw;
       border: 1px solid rgb(136, 176, 25);
-      margin: 0 auto;
+      margin: auto;
       height: 60%;
+    }
+    .cadastro {
+      border: 1px solid blue;
+      padding: 5px;
+      margin: auto;
+      margin-left: -40%;
+      & > *:nth-child(5) {
+        grid-column: 1 / span 2;
+      }
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 180%;
+      height: 100%;
+      .inputs {
+        font-size: 1.1rem;
+        input {
+          width: 95%;
+          height: 3vh;
+        }
+        textarea {
+          width: 98%;
+          resize: none;
+        }
+      }
+
+      .minSpace {
+        margin: 3px;
+      }
+      #cadastrar {
+        margin-top: 4%;
+        width: 96%;
+        height: 60%;
+      }
+    }
+    #font {
+      font-size: 1.1rem;
+    }
+    .pessoas {
+      border: solid 1px rgb(51, 255, 0);
+      width: 90%;
+      height: 85%;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 5px;
+      overflow: scroll;
+      .usuario {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        border: solid 1px rgb(169, 135, 135);
+        border-radius: 5px;
+        height: 18%;
+        min-width: 32.5%;
+      }
+    }
+    .listaBusca {
+      font-size: 1.1rem;
+      border: solid 1px blue;
+      width: 90%;
+      // height: 95%;
+      margin-top: 2% !important;
+      .busca {
+        display: flex;
+      }
+      label {
+        min-width: 130px;
+      }
+      input {
+        width: 100%;
+        height: 3vh;
+      }
     }
   }
 }
@@ -91,4 +166,15 @@ code {
   height: 15vh;
   width: 70%;
   margin: 0px auto;
+}
+.modalBackground {
+  background-color: antiquewhite;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

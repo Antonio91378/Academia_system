@@ -21,7 +21,8 @@ function Home() {
      </Navbar>
      <Section>
         <SideBar>   
-          <OptionBox link={'/config'} nome='Cadastrar Usuário'/>
+          <OptionBox link={'/'} nome='Início'/>
+          <OptionBox link={'/cadastrar'} nome='Cadastrar Usuário'/>
           <OptionBox link={'/pesquisar'} nome='Pesquisar Usuário'/>
         </SideBar>
         <MainHero>

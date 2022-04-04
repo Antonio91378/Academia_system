@@ -6,7 +6,7 @@ import {
   Link,
 } from "react-router-dom";
 import Principal from './pages/Pincipal';
-import Config from './pages/Config';
+import Cadastrar from './pages/Cadastrar';
 import Pesquisar from './pages/Pesquisar';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path='/' element={<Principal/>}/>
-            <Route path='/config' element={<Config/>}/>
+            <Route path='/cadastrar' element={<Cadastrar/>}/>
             <Route path='/pesquisar' element={<Pesquisar/>}/>
         </Routes>
       </BrowserRouter>
