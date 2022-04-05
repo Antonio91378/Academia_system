@@ -49,7 +49,6 @@ const Cadastrar = ()=> {
         </SideBar>
         <MainHero>
           <ListaBusca/>
-
         </MainHero>
      </Section>
      <Footer/>

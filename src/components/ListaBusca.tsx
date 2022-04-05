@@ -55,7 +55,7 @@ const ListaBusca: React.FC = () => {
             pessoas?.map(pessoa =>{
                 const regra = new RegExp(event.target.value, "gi")
                if( regra.test(pessoa.nome)){
-                dados.push(pessoa)
+                dados.push(pessoa);
                }
             })
             setBusca(dados)
