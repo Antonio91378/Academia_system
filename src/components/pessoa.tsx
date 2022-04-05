@@ -1,12 +1,13 @@
 import React from 'react';
 
-interface AppProps {
-    nome:string,
-    cpf:string,
-    data:string,
+interface PessoaProps {
+    nome?:any,
+    cpf?:any,
+    data?:any,
+    index?:number,
 }
 
-const App: React.FC<AppProps> = ({ nome,cpf,data }) => {
+const Pessoa: React.FC<PessoaProps> = ({ nome,cpf,data,index }) => {
     return (
         <div className="usuario">
             <div className="img"></div>
@@ -14,9 +15,9 @@ const App: React.FC<AppProps> = ({ nome,cpf,data }) => {
                 <p>{nome}</p>
                 <p>{cpf}</p>
                 <p>{data}</p>
-            </div>
+            </div>          
         </div>
     );
 };
 
-export default App;
+export default Pessoa;

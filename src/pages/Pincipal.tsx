@@ -24,6 +24,7 @@ function Home() {
           <OptionBox link={'/'} nome='Início'/>
           <OptionBox link={'/cadastrar'} nome='Cadastrar Usuário'/>
           <OptionBox link={'/pesquisar'} nome='Pesquisar Usuário'/>
+          <OptionBox link={'/open'} nome='Ver Processoas em aberto'/>
         </SideBar>
         <MainHero>
           <CheckBox/>
