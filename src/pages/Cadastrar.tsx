@@ -21,6 +21,7 @@ const Cadastrar:React.FC = ()=> {
   const [endereco, setEndereco] = useState('')
   const [obs, setObs] = useState('')
   const [senha,setSenha] = useState('')
+  const [session,setSession] = useState(false)
   const [succesComponent,setSuccesComponent] = useState(false)
   // const [sexo,setSexo] = useState('oi')
   
@@ -54,7 +55,7 @@ const Cadastrar:React.FC = ()=> {
             setobs={(event: { target: { value: React.SetStateAction<string>; }; }) => setObs(event.target.value)}
             setsenha={(event: { target: { value: React.SetStateAction<string>; }; }) => setSenha(event.target.value)}
             função={()=>{
-              Push(nome, data, cpf, cargo, endereco, obs, senha)
+              Push(nome, data, cpf, cargo, endereco, obs, senha, session)
               setNome('')
               setData('')
               setCpf('')

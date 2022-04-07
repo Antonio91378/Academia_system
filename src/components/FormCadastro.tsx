@@ -9,6 +9,8 @@ interface FormCadastroProps {
     endereco:any;
     obs:any;
     senha:any;
+    session?:Boolean;
+    setSession?:Boolean;
     setnome:any;
     setdata:any;
     setcpf:any;
@@ -19,7 +21,7 @@ interface FormCadastroProps {
     // sexo:any;
     }
 
-const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, cargo, endereco, obs, senha,setnome,setdata,setcpf,setcargo,setendereco,setobs,setsenha}) => {
+const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, cargo, endereco, obs, senha, session,setnome,setdata,setcpf,setcargo,setendereco,setobs,setsenha, setSession}) => {
 
     return (
         <div >

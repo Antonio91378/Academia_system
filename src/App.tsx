@@ -8,6 +8,7 @@ import {
 import Principal from './pages/Pincipal';
 import Cadastrar from './pages/Cadastrar';
 import Pesquisar from './pages/Pesquisar';
+import ProcessoosAtivos from './pages/processosAtivos';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path='/' element={<Principal/>}/>
             <Route path='/cadastrar' element={<Cadastrar/>}/>
             <Route path='/pesquisar' element={<Pesquisar/>}/>
+            <Route path='/open' element={<ProcessoosAtivos/>}/>
         </Routes>
       </BrowserRouter>
   );

@@ -2,20 +2,10 @@ import { getDatabase, push, ref, set } from "firebase/database";
 import React, { useState,useEffect } from "react";
 import { database } from '../services/firebase'
 
-type Pessoass ={
-  chave: string,
-  nome: string,
-  data : string,
-  cpf:string,
-  cargo : string,
-  endereco: string,
-  obs: string,
-  senha: string,
-}
 
 
 
-export const Push = (nome: string,data: string,cpf: string,cargo: string,endereco: string,obs: string,senha: string) => {
+export const Push = (nome: string,data: string,cpf: string,cargo: string,endereco: string,obs: string,senha: string,session:any,) => {
  
 
   const dados = {
@@ -26,6 +16,7 @@ export const Push = (nome: string,data: string,cpf: string,cargo: string,enderec
     endereco:endereco,
     obs:obs,
     senha:senha,
+    session:session,
     // sexo:sexo,
   }
   
