@@ -70,9 +70,9 @@ runTransaction(userRef, (session) => {
       </div>
       <div className="bem-vindo2"></div>
         <div className='bem-vindoInput'>
-          <input value={valuee} onChange={(event)=>setValuee(event?.target.value)} placeholder='Digite seu cpf' type="text" />
+          <input  value={valuee} onChange={(event)=>setValuee(event?.target.value)} placeholder='Digite seu cpf' type="text" />
           <div className="estadoCheck">
-            {validacao && <button onClick={()=>
+            {validacao && <button id='btnInput' onClick={()=>
               validando()} >validar</button>}
             {validado && <p>Acesso permitido</p> }
             {naoValidado && <p>Acesso não permitido</p> }
