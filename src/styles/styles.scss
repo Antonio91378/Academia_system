@@ -6,54 +6,100 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --cor-bg-principal: #36393f;
+  --cor-bg-secondary: #2f3136;
+  --cor-bg-3: #202225;
+  --current-bg: #42464d;
+  --hover: #3c3f45;
+  --color: #ffffe0;
+  font-size: 2.4vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.App {
-  border: 1px solid blue;
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+body {
+  background-color: var(--cor-bg-principal);
+}
+.current {
+  background-color: var(--current-bg);
+  border-radius: 10px;
+  // height: 90%;
+  width: 93%;
+  margin: 0 auto;
 }
 
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: solid 1px red;
+  flex-direction: row;
+  background-color: var(--cor-bg-secondary);
   min-height: 80px;
   height: 19vh;
   width: 70%;
   margin: 0px auto;
   .usuario {
-    border: solid 1px red;
-    width: 13vw;
+    // border: solid 1px red;
+    width: 18.5%;
     height: 100%;
+    background-color: var(--cor-bg-3);
+    background-color: rgb(18, 18, 18);
+  }
+  .banner {
+    width: 81.5%;
+    background-image: url('../images/20151006_gymequip_logo_500x127.png');
+    // background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 160px;
+    background-color: black;
   }
 }
+
 .section {
+  background-color: var(--cor-bg-secondary);
   display: flex;
-  border: 1px solid purple;
+  // border: 1px solid purple;
   height: 66vh;
   width: 70%;
   margin: 0px auto;
   .sidebar {
-    border: 1px solid green;
+    padding-top: 8px;
+    background-color: var(--cor-bg-3);
+    // border: 1px solid green;
     width: 13vw;
     display: flex;
     flex-direction: column;
     .box {
-      border: 1px solid rgb(5, 96, 90);
+      // border: 1px solid rgb(5, 96, 90);
+      border-radius: 10px;
+      // height: 90%;
+      width: 93%;
+      margin: 0 auto;
       height: 8%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4px;
+      a {
+        text-decoration: none;
+        color: var(--color);
+        height: 95%;
+        width: 100%;
+        display: flex; /*CSS3*/
+        align-items: center; /*Vertical align*/
+        justify-content: center; /*horizontal align*/
+      }
+      &:hover {
+        background-color: var(--hover);
+      }
     }
   }
+
   .MainHero {
-    overflow: scroll;
-    border: 1px solid rgb(126, 176, 25);
+    // overflow: scroll;
+    // border: 1px solid rgb(126, 176, 25);
     display: flex;
     flex-direction: column;
     width: 57vw;
@@ -62,20 +108,53 @@ code {
 
     .checkBox {
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      width: 40vw;
-      border: 1px solid rgb(176, 25, 116);
+      flex-direction: column;
+      width: 52vw;
+      border-radius: 20px;
       margin: 0 auto;
       margin-top: 8% !important;
-      height: 30%;
+      height: 50vh;
+      background-color: var(--cor-bg-3);
+      .bem-vindo1 {
+        display: flex;
+        align-items: center;
+        // border: 1px solid red;
+        background-color: rgb(18, 18, 18);
+        border-radius: 20px 20px 0 0;
+        height: 30%;
+        .imgUser {
+          border-radius: 50%;
+          margin-left: 7%;
+          width: 5vw;
+          height: 10vh;
+          background-color: rgb(83, 83, 83);
+        }
+        h1 {
+          font-size: 5vh;
+          margin-left: 2%;
+          color: var(--color);
+        }
+      }
+      .bem-vindo2 {
+        // border: 1px solid blue;
+        background-color: var(--cor-bg-principal);
+        height: 40%;
+      }
+      .bem-vindoInput {
+        margin-top: 4%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
       input {
+        border-radius: 10px;
         width: 60%;
         height: 6vh;
         font-size: 1.3rem;
         text-align: center;
       }
       .estadoCheck {
+        // margin-bottom: 5%;
         border: solid 1px red;
         width: 17%;
         height: 6vh;
@@ -200,10 +279,11 @@ code {
 }
 .footer {
   display: flex;
-  border: 1px solid rgb(185, 99, 185);
+  // border: 1px solid rgb(185, 99, 185);
   height: 15vh;
   width: 70%;
   margin: 0px auto;
+  background-color: rgb(18, 18, 18);
 }
 .modalBackground {
   background-color: antiquewhite;

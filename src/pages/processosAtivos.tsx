@@ -65,10 +65,10 @@ const ProcessoosAtivos: React.FC<ProcessoosAtivosProps> = ({  }) => {
         </Navbar>
         <Section>
            <SideBar>   
-             <OptionBox link={'/'} nome='Início'/>
-             <OptionBox link={'/cadastrar'} nome='Cadastrar Usuário'/>
-             <OptionBox link={'/pesquisar'} nome='Pesquisar Usuário'/>
-             <OptionBox link={'/open'} nome='Ver Processoas em aberto'/>
+             <OptionBox classes={'box'} link={'/'} nome='Início'/>
+             <OptionBox classes={'box'} link={'/cadastrar'} nome='Cadastrar Usuário'/>
+             <OptionBox classes={'box'} link={'/pesquisar'} nome='Pesquisar Usuário'/>
+             <OptionBox classes={'box current'} link={'/open'} nome='Processos Abertos'/>
            </SideBar>
            <MainHero>
                <OpenProcess>

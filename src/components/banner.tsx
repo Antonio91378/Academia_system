@@ -1,14 +1,13 @@
 import React from 'react';
 
 interface BannerProps {
-   children? : string;
+
 }
 
-const Banner: React.FC<BannerProps> = ({ children }) => {
+const Banner: React.FC<BannerProps> = () => {
     return (
         <div className="banner">
-            {children}
-            <p>banner</p>
+            <p>oi</p>
         </div>
     );
 };
