@@ -34,18 +34,25 @@ body {
   display: flex;
   flex-direction: row;
   background-color: var(--cor-bg-secondary);
-  min-height: 80px;
+  // min-height: 80px;
   height: 19vh;
   width: 70%;
   margin: 0px auto;
+  .usuarioo {
+    width: 13.1vw;
+    height: 21.3vh;
+    background-color: rgb(18, 18, 18);
+  }
   .usuario {
     // border: solid 1px red;
     width: 18.5%;
     height: 100%;
     background-color: var(--cor-bg-3);
     background-color: rgb(18, 18, 18);
+    height: 21.5vh;
   }
   .banner {
+    height: 21.5vh;
     width: 81.5%;
     background-image: url('../images/20151006_gymequip_logo_500x127.png');
     // background-position: top;
@@ -59,12 +66,15 @@ body {
 .section {
   background-color: var(--cor-bg-secondary);
   display: flex;
+  flex-direction: row;
   // border: 1px solid purple;
   height: 66vh;
   width: 70%;
   margin: 0px auto;
   .sidebar {
-    padding-top: 8px;
+    // height: 65vh;
+    padding-top: 1vh;
+    margin-top: 1.6%;
     background-color: var(--cor-bg-3);
     // border: 1px solid green;
     width: 13vw;
@@ -105,7 +115,7 @@ body {
     width: 57vw;
     align-items: center;
     justify-content: center;
-
+    // height: 100%;
     .checkBox {
       display: flex;
       flex-direction: column;

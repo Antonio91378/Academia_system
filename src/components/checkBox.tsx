@@ -14,7 +14,9 @@ const CheckBox: React.FC<CheckBoxProps> = ({  }) => {
   const[validado,setValidado]=useState(false)
   const[naoValidado,setNaoValidado]=useState(false)
   const[valuee,setValuee]=useState('')
-  const[btnClick,setBtnClick]=useState(false)
+  const[userFound,setUserFound]=useState(false)
+  const[nomeSnapshot,setNomeSnapshot]=useState('')
+  const[aguardando,setAguardando]=useState(true)
  
 
 
@@ -26,18 +28,35 @@ const pesquisa = [orderByChild('cpf'), equalTo(valuee)]
 const Pessoaa = await get(query(dbRef, ...pesquisa));
 
 if (Pessoaa.exists()) {
+
   console.log("found by name", Pessoaa.val());
   const fistKey = Object.keys(Pessoaa.val())
   
   setValidacao(false)
   setValidado(true)
 
-  const userRef = ref(database, `/usuários/${fistKey}/session`);
+  const userRef1 = ref(database, `/usuários/${fistKey}/session`);
+  const userRef2 = ref(database, `/usuários/${fistKey}/nome`);
+ onValue(userRef2, (snapshot) =>{
+   const data = snapshot.val();
+   console.log(data);
+   setNomeSnapshot(data);
+   setUserFound(true);
+   setAguardando(false)
+   setTimeout(()=>{
+     setUserFound(false);
+     setAguardando(true)
+    setNomeSnapshot('');
+   },3000)
+ }) 
+  
 
-runTransaction(userRef, (session) => {
+runTransaction(userRef1, (session) => {
   if (session) {
     return !session
   }
+
+  
   return true; // 👈 default value
 });
 
@@ -65,8 +84,10 @@ runTransaction(userRef, (session) => {
   return (
     <div className="checkBox">
       <div className="bem-vindo1">
-        <div className="imgUser">oi</div>
-        <h1>Bem-Vindo nome</h1>
+        <div className="imgUser"></div>
+        {aguardando && <h1>Aguardando ...</h1>}
+        {userFound && <h1>Bem-Vindo {nomeSnapshot}</h1>}
+        
       </div>
       <div className="bem-vindo2"></div>
         <div className='bem-vindoInput'>
