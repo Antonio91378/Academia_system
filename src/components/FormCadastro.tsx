@@ -25,61 +25,76 @@ const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, 
 
     return (
         <div >
-            <form className="cadastro" action="" onSubmit={(event) =>{
-                event.preventDefault();
-                função();
-                }
-                }>
-                <div className='inputs' >
-                    <label htmlFor="">Nome completo:</label>
-                    <br />
-                    <input value={nome} onChange={setnome} type="text" />
-                </div>
-                <div className='inputs'>
-                    <label htmlFor="">Data de nascimento:</label>
-                    <br />
-                    <input value={data} onChange={setdata} type="text" />
-                </div>
-                <div className='inputs'>
-                    <label htmlFor="">CPF:</label>
-                    <br />
-                    <input value={cpf} onChange={setcpf} type="text" />
-                </div>
-                <div className='inputs'>
-                    <label htmlFor="">Cargo:</label>
-                    <br />
-                    <input value={cargo} onChange={setcargo} type="text" />
-                </div>
-                <div className='inputs'> 
-                    <label htmlFor="">Endereço:</label>
-                    <br />
-                    <textarea value={endereco} onChange={setendereco} name=""></textarea>
-                </div>
-                <div className='inputs'>
-                    <label htmlFor="">Observação:</label>
-                    <br />
-                    <input value={obs} onChange={setobs} type="text" />
-                </div>
-                <div className='inputs'>
-                    <label htmlFor="">Senha de 6 Dígitos:</label>
-                    <br />
-                    <input value={senha} onChange={setsenha} type="text" />
-                </div>
-                <div id='sexo'>
-                    <div>
-                        <label id='font'htmlFor="">Sexo:</label>
+            <div className="form-hero">
+                <form className="cadastro" action="" onSubmit={(event) =>{
+                    event.preventDefault();
+                    função();
+                    }
+                    }>
+                    <div className="block-form">
+                        <div className='inputs' >
+                            <label htmlFor="">Nome completo:</label>
+                            <br />
+                            <div className='oi'><input value={nome} onChange={setnome} type="text" /></div>
+                            
+                        </div>
+                        <div className='inputs'>
+                            <label htmlFor="">Data de nascimento:</label>
+                            <br />
+                            <div className='oi'><input value={data} onChange={setdata} type="text" /></div>
+                            
+                        </div>
+                    </div>
+                    <div className="block-form">
+                        <div className='inputs'>
+                            <label htmlFor="">CPF:</label>
+                            <br />
+                            <div className='oi'><input value={cpf} onChange={setcpf} type="text" /></div>
+                            
+                        </div>
+                        <div className='inputs'>
+                            <label htmlFor="">Cargo:</label>
+                            <br />
+                            <div className='oi'><input value={cargo} onChange={setcargo} type="text" /></div>
+                            
+                        </div>
+                    </div>
+                    <div className='inputs'> 
+                        <label htmlFor="">Endereço:</label>
+                        <br />
+                        <div className='oi2'><textarea value={endereco} onChange={setendereco} name=""></textarea></div>
+                        
+                    </div>
+                    <div className="block-form">
+                        <div className='inputs'>
+                            <label htmlFor="">Observação:</label>
+                            <br />
+                            <div className='oi'><input value={obs} onChange={setobs} type="text" /></div>
+                            
+                        </div>
+                        <div className='inputs'>
+                            <label htmlFor="">Senha de 6 Dígitos:</label>
+                            <br />
+                            <div className='oi'><input value={senha} onChange={setsenha} type="text" /></div>
+                            
+                        </div>
+                    </div>
+                    <div id='sexo'>
+                        <div>
+                            <label id='font'htmlFor="">Sexo:</label>
+                        </div>
+                        <div id='checkboxes'>
+                            <input className='first' type="checkbox" name="" id="checkbox" />
+                            <label className='minSpace' htmlFor="">Masculino</label>
+                            <input  type="checkbox" name="" id="checkbox" />            
+                            <label className='minSpace' htmlFor="">Feminino</label>
+                        </div>
                     </div>
                     <div>
-                        <input className='minSpace' type="checkbox" name="" id="" />
-                        <label className='minSpace' htmlFor="">Masculino</label>
-                        <input className='minSpace' type="checkbox" name="" id="" />            
-                        <label className='minSpace' htmlFor="">Feminino</label>
+                        <button  type='submit' id='cadastrar'>Cadastrar</button>
                     </div>
-                </div>
-                <div>
-                    <button  type='submit' id='cadastrar'>Cadastrar</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     );
 };

@@ -24,7 +24,7 @@ body {
 }
 .current {
   background-color: var(--current-bg);
-  border-radius: 10px;
+  // border-radius: 1vh;
   // height: 90%;
   width: 93%;
   margin: 0 auto;
@@ -52,7 +52,7 @@ body {
     height: 21.5vh;
   }
   .banner {
-    height: 21.5vh;
+    height: 21.3vh;
     width: 81.5%;
     background-image: url('../images/20151006_gymequip_logo_500x127.png');
     // background-position: top;
@@ -72,8 +72,6 @@ body {
   width: 70%;
   margin: 0px auto;
   .sidebar {
-    // height: 65vh;
-    padding-top: 1vh;
     margin-top: 1.6%;
     background-color: var(--cor-bg-3);
     // border: 1px solid green;
@@ -82,16 +80,16 @@ body {
     flex-direction: column;
     .box {
       // border: 1px solid rgb(5, 96, 90);
-      border-radius: 10px;
+      border-radius: 1vh;
       // height: 90%;
       width: 93%;
       margin: 0 auto;
-      height: 8%;
+      height: 6vh;
       text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 4px;
+      margin-top: 0.5vh;
       a {
         text-decoration: none;
         color: var(--color);
@@ -106,8 +104,14 @@ body {
       }
     }
   }
-
+  .oi {
+    height: 5vh;
+  }
+  .oi2 {
+    height: 10vh;
+  }
   .MainHero {
+    // border: 1px solid red;
     // overflow: scroll;
     // border: 1px solid rgb(126, 176, 25);
     display: flex;
@@ -115,12 +119,13 @@ body {
     width: 57vw;
     align-items: center;
     justify-content: center;
-    // height: 100%;
+    height: 63.3vh;
+    margin-top: 2vh;
     .checkBox {
       display: flex;
       flex-direction: column;
       width: 52vw;
-      border-radius: 20px;
+      border-radius: 2vh;
       margin: 0 auto;
       margin-top: 8% !important;
       height: 50vh;
@@ -130,7 +135,7 @@ body {
         align-items: center;
         // border: 1px solid red;
         background-color: rgb(18, 18, 18);
-        border-radius: 20px 20px 0 0;
+        border-radius: 2vh 2vh 0 0;
         height: 30%;
         .imgUser {
           border-radius: 50%;
@@ -142,7 +147,7 @@ body {
         h1 {
           font-size: 5vh;
           margin-left: 2%;
-          color: var(--color);
+          color: rgb(204, 204, 204);
         }
       }
       .bem-vindo2 {
@@ -157,7 +162,7 @@ body {
         display: flex;
       }
       input {
-        border-radius: 10px;
+        border-radius: 2vh;
         width: 60%;
         height: 6vh;
         font-size: 1.3rem;
@@ -172,7 +177,7 @@ body {
         #btnInput {
           width: 100%;
           height: 100%;
-          border-radius: 10px;
+          border-radius: 2vh;
         }
       }
     }
@@ -182,35 +187,95 @@ body {
       margin: auto;
       height: 60%;
     }
+    .form-hero {
+      overflow: scroll;
+      width: 50vw;
+      height: 63vh;
+      // border: 1px solid red;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .cadastro {
-      border: 1px solid blue;
-      padding: 5px;
-      margin: auto;
-      margin-left: -40%;
-      & > *:nth-child(5) {
-        grid-column: 1 / span 2;
-      }
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      width: 180%;
-      height: 100%;
-      .inputs {
-        font-size: 1.1rem;
-        input {
-          width: 95%;
-          height: 3vh;
-        }
-        textarea {
-          width: 98%;
-          resize: none;
-        }
+      // height: 45vh;
+      background-color: var(--cor-bg-3);
+      padding: 1.5vh;
+      border-radius: 1vw;
+      #checkbox {
+        height: 1.7vh;
+        border: none;
+        width: 1vw;
+        outline: none;
       }
 
+      position: absolute;
+      top: 5%;
+      label {
+        // font-size: 1.2rem;
+        color: var(--color);
+        padding-left: 0.5vw;
+        color: rgb(204, 204, 204);
+      }
+      .block-form {
+        display: flex;
+        justify-content: space-between;
+      }
+      .inputs {
+        div {
+          display: flex;
+          justify-content: center;
+        }
+        input {
+          // border: none;
+          margin: 0 0.5vw;
+          // width: 18vw;
+          // height: 3vh;
+          font-size: 2vh;
+          font-family: inherit;
+          width: 100%;
+          border: 0;
+          border-bottom: 0.4vh solid var(--cor-bg-principal);
+          outline: 0;
+          color: var(--color);
+          // padding: 7px 0;
+          background: transparent;
+          transition: border-color 0.2s;
+
+          &::placeholder {
+            color: transparent;
+          }
+        }
+        textarea {
+          border: none;
+          width: 98%;
+          resize: none;
+          font-size: 2vh;
+          font-family: inherit;
+          width: 100%;
+          border: 0;
+          border-bottom: 0.4vh solid var(--cor-bg-principal);
+          outline: 0;
+          color: var(--color);
+          // padding: 2vh 0;
+          margin-left: 1.1vh;
+          background: transparent;
+        }
+      }
+      .first {
+        margin-left: 0.5vw;
+      }
       .minSpace {
-        margin: 3px;
+        margin-right: 2vh;
+        border: none;
       }
       #cadastrar {
+        background-color: rgb(204, 204, 204);
+        padding: 0.6vh;
+        border-radius: 0.5vh;
+        border: none;
         margin-top: 4%;
+        margin-bottom: 2%;
         width: 96%;
         height: 60%;
       }
