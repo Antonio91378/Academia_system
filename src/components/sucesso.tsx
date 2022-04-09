@@ -8,8 +8,10 @@ const SuccesMensage: React.FC<SuccesMensageProps> = ({ func }) => {
     return (
         <div className="modalBackground">
              <div>
-                <p>usuario cadastrado com sucesso </p>
-                <button onClick={func} >continuar</button>
+                <p>usuário cadastrado com sucesso </p>
+            </div>
+            <div>
+            <button onClick={func} >continuar</button>
             </div>
         </div>
        

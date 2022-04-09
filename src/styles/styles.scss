@@ -440,13 +440,14 @@ body {
   background-color: rgb(18, 18, 18);
 }
 .modalBackground {
-  background-color: antiquewhite;
+  background-color: rgb(174, 232, 174);
   width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0px;
   left: 0px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
