@@ -33,9 +33,12 @@ interface ProcessoosAtivosProps {
 const ProcessoosAtivos: React.FC<ProcessoosAtivosProps> = ({  }) => {
 
     const[pessoas,setPessoas]=useState<Pessoass[]>()
+    const[pessoasSeesion,setPessoasSeesion]=useState<Pessoass[]>()
+    const[number,setNumber]=useState(0)
 
     useEffect(()=>{
-        return onValue(ref(database,'usuários'),(snapshot =>{
+        return (
+          onValue(ref(database,'usuários'),(snapshot =>{
           const nomee = (snapshot.val()) || 'anonimo'
           
           const resultadoPessoas = Object.entries<Pessoass>(nomee ?? {}).map(([chave, valor]) =>{
@@ -53,7 +56,12 @@ const ProcessoosAtivos: React.FC<ProcessoosAtivosProps> = ({  }) => {
               }
           })
           setPessoas(resultadoPessoas)
-      }))
+          console.log(resultadoPessoas);
+          
+        })
+        )
+        
+        )
       },[])
 
 
@@ -65,20 +73,25 @@ const ProcessoosAtivos: React.FC<ProcessoosAtivosProps> = ({  }) => {
         </Navbar>
         <Section>
            <SideBar>   
+           
              <OptionBox classes={'box'} link={'/'} nome='Início'/>
              <OptionBox classes={'box'} link={'/cadastrar'} nome='Cadastrar Usuário'/>
              <OptionBox classes={'box'} link={'/pesquisar'} nome='Pesquisar Usuário'/>
              <OptionBox classes={'box current'} link={'/open'} nome='Processos Abertos'/>
            </SideBar>
            <MainHero>
-               <OpenProcess>
+           {/* number={number} */}
+               <OpenProcess >
                    {pessoas?.map(pessoa =>{
+                       
                        if(pessoa.session === true){
                             return(
-                                <LinePessoa nome={pessoa.nome} />
-                            )                           
+                                <LinePessoa nome={pessoa.nome} />       
+                            )       
                        }
-                   })}
+                   })
+                   }
+                    {/* {setNumber(1)} */}
                </OpenProcess>
            </MainHero>
         </Section>

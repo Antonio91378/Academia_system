@@ -3,13 +3,14 @@ import LinePessoa from './LinePessoa';
 
 interface OpenProcessProps {
     children:React.ReactNode;
+    number?:number;
 }
 
-const OpenProcess: React.FC<OpenProcessProps> = ({ children }) => {
+const OpenProcess: React.FC<OpenProcessProps> = ({ children,number }) => {
     return (
         <div className="openProcess">
             <div>
-                <p>X processoas abertos</p>
+                <p id='p-open'>{number} Processoas abertos</p>
             </div>
             <div>
                 {children}
