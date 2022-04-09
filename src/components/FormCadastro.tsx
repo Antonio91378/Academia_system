@@ -90,7 +90,7 @@ const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, 
                             <label className='minSpace' htmlFor="">Feminino</label>
                         </div>
                     </div>
-                    <div>
+                    <div id='cadastrarbtn'>
                         <button  type='submit' id='cadastrar'>Cadastrar</button>
                     </div>
                 </form>
