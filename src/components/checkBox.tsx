@@ -1,6 +1,7 @@
 import { DataSnapshot,set,  equalTo, get, orderByChild, query, ref, update, onValue, runTransaction } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 import { database } from '../services/firebase';
+import Loader from './loader';
 
 
 interface CheckBoxProps {
@@ -85,7 +86,7 @@ runTransaction(userRef1, (session) => {
     <div className="checkBox">
       <div className="bem-vindo1">
         <div className="imgUser"></div>
-        {aguardando && <h1>Aguardando ...</h1>}
+        {aguardando && <Loader/>}
         {userFound && <h1>Bem-Vindo {nomeSnapshot}</h1>}
         
       </div>
