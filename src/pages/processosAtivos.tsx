@@ -37,6 +37,7 @@ const ProcessoosAtivos: React.FC<ProcessoosAtivosProps> = ({  }) => {
     const[number,setNumber]=useState(0)
 
     useEffect(()=>{
+      
         return (
           onValue(ref(database,'usuários'),(snapshot =>{
           const nomee = (snapshot.val()) || 'anonimo'
@@ -57,12 +58,27 @@ const ProcessoosAtivos: React.FC<ProcessoosAtivosProps> = ({  }) => {
           })
           setPessoas(resultadoPessoas)
           console.log(resultadoPessoas);
+          // função para agrupar parâmetros de valor igual, dentro da array de objetos
+          function agruparPor(objetoArray: any[], propriedade: string | number) {
+            return objetoArray.reduce(function (acc, obj) {
+              let key = obj[propriedade];
+              if (!acc[key]) {
+                acc[key] = [];
+              }
+              acc[key].push(obj);
+              return acc;
+            }, {});
+          }
+          // agrupando usuarios de sessão = true 
+          let grupodeSessoes = agruparPor(resultadoPessoas,'session');
+          setNumber(grupodeSessoes.true.length)
+          
           
         })
         )
         
         )
-      },[])
+      },[number])
 
 
     return (
@@ -80,8 +96,7 @@ const ProcessoosAtivos: React.FC<ProcessoosAtivosProps> = ({  }) => {
              <OptionBox classes={'box current'} link={'/open'} nome='Processos Abertos'/>
            </SideBar>
            <MainHero>
-           {/* number={number} */}
-               <OpenProcess >
+               <OpenProcess number={number} >
                    {pessoas?.map(pessoa =>{
                        
                        if(pessoa.session === true){

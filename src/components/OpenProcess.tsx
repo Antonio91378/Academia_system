@@ -10,7 +10,7 @@ const OpenProcess: React.FC<OpenProcessProps> = ({ children,number }) => {
     return (
         <div className="openProcess">
             <div>
-                <p id='p-open'>{number} Processoas abertos</p>
+                <p id='p-open'>{number} Processos abertos</p>
             </div>
             <div>
                 {children}

@@ -39,12 +39,39 @@ body {
   width: 70%;
   margin: 0px auto;
   .usuarioo {
+    p {
+      border-bottom: 0.4vh solid #434446;
+    }
+    position: relative;
     width: 13.1vw;
     height: 21.3vh;
     background-color: rgb(18, 18, 18);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(83, 83, 83);
+    .sair {
+      a {
+        position: absolute;
+        top: 0;
+        right: 1vh;
+        text-decoration: none;
+        color: rgb(83, 83, 83);
+        border-bottom: 0.4vh solid #434446;
+      }
+      display: flex;
+      align-items: flex-end;
+    }
+    .imagem {
+      background-color: var(--cor-bg-principal);
+      width: 5.5vw;
+      height: 5.5vw;
+      border-radius: 50%;
+    }
   }
   .usuario {
-    // border: solid 1px red;
+    border: solid 1px red;
     width: 18.5%;
     height: 100%;
     background-color: var(--cor-bg-3);
@@ -58,7 +85,7 @@ body {
     // background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position-x: 11vw;
+    background-position-x: 10vw;
     background-color: black;
   }
 }
@@ -372,6 +399,7 @@ body {
 
           min-height: 25px;
           display: flex;
+
           justify-content: space-between;
           align-items: center;
           background-color: rgb(174, 232, 174);
@@ -383,8 +411,29 @@ body {
   }
 }
 .footer {
+  a {
+    color: #434446;
+    text-decoration: none;
+    font-size: 1.8vh;
+  }
+  #footer1 {
+    width: 90%;
+    height: 1px;
+    border-bottom: 0.3vh dotted #434446;
+  }
+  #footer2 {
+    padding-top: 3vh;
+    font-size: 1.8vh;
+  }
+  #footer3 {
+    font-size: 1.8vh;
+    padding-bottom: 1vh;
+  }
+  color: #434446;
   display: flex;
-  // border: 1px solid rgb(185, 99, 185);
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   height: 15vh;
   width: 70%;
   margin: 0px auto;
