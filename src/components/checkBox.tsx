@@ -120,7 +120,7 @@ runTransaction(userRef1, (session) => {
         {userFound && sexF && session && <h1>Bem-Vinda</h1>}
         {userFound && sexO && session &&<h1>Bem-Vinde</h1>}
         {userFound && !session && <h1>Até Logo</h1>}
-        {userFound && <h1> {nomeSnapshot}</h1>}
+        {userFound && <h1> {nomeSnapshot.split(' ')[0]}</h1>}
         
       </div>
       <div className="bem-vindo2"></div>
