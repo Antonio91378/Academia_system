@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import '../styles/styles.scss'
 import Navbar from '../components/navbar';
 import Section from '../components/section';
@@ -14,6 +14,7 @@ import SuccesMensage from '../components/sucesso';
 
 const Cadastrar:React.FC = ()=> {
 
+
   const [nome, setNome] = useState('')
   const [data, setData] = useState('')
   const [cpf, setCpf] = useState('')
@@ -21,9 +22,10 @@ const Cadastrar:React.FC = ()=> {
   const [endereco, setEndereco] = useState('')
   const [obs, setObs] = useState('')
   const [senha,setSenha] = useState('')
+  const [sex,setSex] = useState(undefined)
   const [session,setSession] = useState(false)
   const [succesComponent,setSuccesComponent] = useState(false)
-  // const [sexo,setSexo] = useState('oi')
+
   
   return (
     <div>
@@ -47,6 +49,8 @@ const Cadastrar:React.FC = ()=> {
             endereco={endereco}
             obs={obs}
             senha={senha}
+            sex={sex}
+            setsex={(event: { target: { value: React.SetStateAction<undefined>; }; }) => setSex(event.target.value)}
             setnome={(event: { target: { value: React.SetStateAction<string>; }; }) => setNome(event.target.value)}
             setdata={(event: { target: { value: React.SetStateAction<string>; }; }) => setData(event.target.value)}
             setcpf={(event: { target: { value: React.SetStateAction<string>; }; }) => setCpf(event.target.value)}
@@ -55,7 +59,8 @@ const Cadastrar:React.FC = ()=> {
             setobs={(event: { target: { value: React.SetStateAction<string>; }; }) => setObs(event.target.value)}
             setsenha={(event: { target: { value: React.SetStateAction<string>; }; }) => setSenha(event.target.value)}
             função={()=>{
-              Push(nome, data, cpf, cargo, endereco, obs, senha, session)
+              Push(nome, data, cpf, cargo, endereco, obs, senha,session, sex)
+              setSex(undefined)
               setNome('')
               setData('')
               setCpf('')

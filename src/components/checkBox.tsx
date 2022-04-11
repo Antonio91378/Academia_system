@@ -18,7 +18,10 @@ const CheckBox: React.FC<CheckBoxProps> = ({  }) => {
   const[userFound,setUserFound]=useState(false)
   const[nomeSnapshot,setNomeSnapshot]=useState('')
   const[aguardando,setAguardando]=useState(true)
- 
+  const[sexM,setSexM]=useState(false)
+  const[sexF,setSexF]=useState(false)
+  const[sexO,setSexO]=useState(false)
+  const[session,setSession]=useState(false)
 
 
 const validando = async ()=>{
@@ -38,19 +41,49 @@ if (Pessoaa.exists()) {
 
   const userRef1 = ref(database, `/usuários/${fistKey}/session`);
   const userRef2 = ref(database, `/usuários/${fistKey}/nome`);
+  const userRef3 = ref(database, `/usuários/${fistKey}/sex`);
  onValue(userRef2, (snapshot) =>{
    const data = snapshot.val();
    console.log(data);
    setNomeSnapshot(data);
    setUserFound(true);
    setAguardando(false)
+
+   onValue(userRef1, (snapshot)=>{
+     const data2 = snapshot.val()
+     if(data2 === true){
+       setSession(true)
+     }
+     else if(data2 === false){
+       setSession(false)
+     }
+
+   })
+
+   onValue(userRef3, (snapshot)=>{
+    const data1 = snapshot.val();
+    if(data1==='M'){
+      setSexM(true)
+    }
+    else if(data1==='F'){
+     setSexF(true)
+    }
+    else if(data1==='O'){
+     setSexO(true)
+    }
+  })
+
    setTimeout(()=>{
+    setSexM(false)
+    setSexF(false)
+    setSexO(false)
      setUserFound(false);
      setAguardando(true)
     setNomeSnapshot('');
    },3000)
  }) 
   
+
 
 runTransaction(userRef1, (session) => {
   if (session) {
@@ -60,10 +93,6 @@ runTransaction(userRef1, (session) => {
   
   return true; // 👈 default value
 });
-
-
-
-
   setTimeout(()=>{
     setValidacao(true)
     setValidado(false)
@@ -87,7 +116,11 @@ runTransaction(userRef1, (session) => {
       <div className="bem-vindo1">
         <div className="imgUser"></div>
         {aguardando && <Loader/>}
-        {userFound && <h1>Bem-Vindo {nomeSnapshot}</h1>}
+        {userFound && sexM && session && <h1>Bem-Vindo</h1>}
+        {userFound && sexF && session && <h1>Bem-Vinda</h1>}
+        {userFound && sexO && session &&<h1>Bem-Vinde</h1>}
+        {userFound && !session && <h1>Até Logo</h1>}
+        {userFound && <h1> {nomeSnapshot}</h1>}
         
       </div>
       <div className="bem-vindo2"></div>

@@ -18,11 +18,11 @@ interface FormCadastroProps {
     setendereco:any;
     setobs:any;
     setsenha:any;
-    // sexo:any;
+    sex:any;
+    setsex?:any;
     }
 
-const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, cargo, endereco, obs, senha, session,setnome,setdata,setcpf,setcargo,setendereco,setobs,setsenha, setSession}) => {
-
+const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, cargo, endereco, obs, senha,setnome,setdata,setcpf,setcargo,setendereco,setobs,setsenha, sex,setsex, setSession}) => {
     return (
         <div >
             <div className="form-hero">
@@ -83,11 +83,20 @@ const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, 
                         <div>
                             <label id='font'htmlFor="">Sexo:</label>
                         </div>
-                        <div id='checkboxes'>
-                            <input className='first' type="checkbox" name="" id="checkbox" />
-                            <label className='minSpace' htmlFor="">Masculino</label>
-                            <input  type="checkbox" name="" id="checkbox" />            
-                            <label className='minSpace' htmlFor="">Feminino</label>
+                        <div id='checkboxes'> 
+                            <div>
+                                <input type="radio" name="sexo"  className='sex' value='M' checked={sex === 'M'} onChange={setsex}/>
+                                 <p className="sex">Masculino </p>
+                            </div>
+                            <div>
+                                <input type="radio" name="sexo"  className='sex' checked={sex === 'F'} value='F' onChange={setsex}/>
+                                <p className="sex">Feminino </p>
+                            </div>
+                            <div>
+                                <input type="radio" name="sexo"  className='sex'  checked={sex === 'O'} value='F' onChange={setsex}/>
+                                <p className="sex">Não declarado </p>
+                            </div>
+
                         </div>
                     </div>
                     <div id='cadastrarbtn'>

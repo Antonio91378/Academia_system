@@ -5,7 +5,7 @@ import { database } from '../services/firebase'
 
 
 
-export const Push = (nome: string,data: string,cpf: string,cargo: string,endereco: string,obs: string,senha: string,session:any,) => {
+export const Push = (nome: string,data: string,cpf: string,cargo: string,endereco: string,obs: string,senha: string,session:any,sex:any) => {
  
 
   const dados = {
@@ -17,7 +17,7 @@ export const Push = (nome: string,data: string,cpf: string,cargo: string,enderec
     obs:obs,
     senha:senha,
     session:session,
-    // sexo:sexo,
+    sex:sex,
   }
   
   push(ref(database,'usuários'), dados)

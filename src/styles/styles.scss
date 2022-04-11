@@ -72,7 +72,7 @@ body {
     }
   }
   .usuario {
-    border: solid 1px red;
+    // border: solid 1px red;
     width: 18.5%;
     height: 100%;
     background-color: var(--cor-bg-3);
@@ -221,12 +221,13 @@ body {
       width: 50vw;
       height: 62vh;
       // border: 1px solid red;
-      position: relative;
+      // position: relative;
       display: flex;
-      align-items: center;
+      // align-items: center;
       justify-content: center;
     }
     .cadastro {
+      margin-top: 1vh;
       box-shadow: 0 0 2vw #202225;
       // height: 45vh;
       background-color: var(--cor-bg-3);
@@ -239,7 +240,7 @@ body {
         outline: none;
       }
 
-      position: absolute;
+      // position: absolute;
       top: 5%;
       label {
         // font-size: 1.2rem;
@@ -511,4 +512,23 @@ $amount: 10px;
   // rotate: 2vw;
   padding-left: 1.5vw;
   color: #42464d;
+}
+.sex {
+  margin-top: 2vh;
+  color: rgb(204, 204, 204);
+  display: inline;
+  padding-left: 1vh;
+}
+#checkboxes {
+  padding-bottom: 2.5vh;
+  justify-content: center;
+  & > :nth-child(2) {
+    padding-right: 2vh;
+  }
+  & > :nth-child(1) {
+    padding-right: 2vh;
+  }
+  display: flex;
+  // justify-content: center;
+  align-items: center;
 }
