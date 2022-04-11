@@ -93,7 +93,7 @@ const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, 
                                 <p className="sex">Feminino </p>
                             </div>
                             <div>
-                                <input type="radio" name="sexo"  className='sex'  checked={sex === 'O'} value='F' onChange={setsex}/>
+                                <input type="radio" name="sexo"  className='sex'  checked={sex === 'O'} value='O' onChange={setsex}/>
                                 <p className="sex">Não declarado </p>
                             </div>
 
