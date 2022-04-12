@@ -254,10 +254,15 @@ body {
       }
 
       #first-input {
-        min-width: 11.4vw;
+        // min-width: 11.4vw;
+
+        width: 100%;
+        // padding-left: 10%;
+        // margin: 0;
         // display: none;
       }
       .inputs {
+        width: 100%;
         div {
           display: flex;
           justify-content: center;
