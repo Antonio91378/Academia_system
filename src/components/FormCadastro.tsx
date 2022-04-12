@@ -25,7 +25,7 @@ interface FormCadastroProps {
 const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, cargo, endereco, obs, senha,setnome,setdata,setcpf,setcargo,setendereco,setobs,setsenha, sex,setsex, setSession}) => {
 const [condition,setCondition]=useState(false)
 
-    const validation = (nome: any ) =>{
+    const validation = (nome: any,data: any,cpf: any,cargo: any,endereco: any ) =>{
         var erros = [4]
         //condição 1
         nome = nome;
@@ -34,25 +34,24 @@ const [condition,setCondition]=useState(false)
         // data: any, cpf: any, cargo: any, endereco: any, sex: any
 
         if(nome.length === 0){
-            erros[0] = 1;
             setCondition(true)
         }
 
-        // if(nome.length === 0){
-        //     erros[0] = 1;
-        // }
+        if(data.length == ''){
+            setCondition(true)
+        }
 
-        // if(nome.length === 0){
-        //     erros[0] = 1;
-        // }
+        if(cpf.length === 0){
+            setCondition(true)
+        }
 
-        // if(nome.length === 0){
-        //     erros[0] = 1;
-        // }
+        if(cargo.length === 0){
+            setCondition(true)
+        }
 
-        // if(nome.length === 0){
-        //     erros[0] = 1;
-        // }
+        if(endereco.length === 0){
+            setCondition(true)
+        }
         console.log(erros);
     }
 
@@ -69,7 +68,7 @@ const [condition,setCondition]=useState(false)
                 <form className="cadastro" action="" onSubmit={(event) =>{
                     event.preventDefault();
                     função();
-                    validation(nome);
+                    validation(nome,data,cpf,cargo,endereco);
                     }
                     }>
                     <div className="block-form ">
@@ -154,11 +153,11 @@ const [condition,setCondition]=useState(false)
                                 
                             </div>
                             <div className="errors">
-                                <div className="error"><p>preencha o campo 'Nome completo'</p></div>
-                                <div className="error"><p>preencha o campo 'CPF'</p></div>
-                                <div className="error"><p>preencha o campo 'Cargo'</p></div>
-                                <div className="error"><p>preencha o campo 'Endereço'</p></div>
-                                <div className="error"><p>selecione o campo 'sexo'</p></div>
+                                {nome.length===0 && <div className="error"><p>preencha o campo 'Nome completo'</p></div>}
+                                {cpf.length===0 && <div className="error"><p>preencha o campo 'CPF'</p></div>}
+                                {cargo.length===0 && <div className="error"><p>preencha o campo 'Cargo'</p></div>} 
+                                {endereco.length===0 && <div className="error"><p>preencha o campo 'Endereço'</p></div>}
+                                {data=='' && <div className="error"><p>selecione o campo 'Data de nascimento'</p></div>}
                             </div>
                         </div>
                     </div>} 
