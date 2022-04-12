@@ -110,7 +110,14 @@ runTransaction(userRef1, (session) => {
   return null;
 }  
 }
-
+function nomeComposto(){
+  if (nomeSnapshot.split(' ')[1] !== undefined){
+    return ( nomeSnapshot.split(' ')[1] )
+  }
+  else{
+    return ''
+  }
+}
   return (
     <div className="checkBox">
       <div className="bem-vindo1">
@@ -120,7 +127,8 @@ runTransaction(userRef1, (session) => {
         {userFound && sexF && session && <h1>Bem-Vinda</h1>}
         {userFound && sexO && session &&<h1>Bem-Vinde</h1>}
         {userFound && !session && <h1>Até Logo</h1>}
-        {userFound && <h1> {nomeSnapshot.split(' ')[0]}</h1>}
+        
+        {userFound && <h1> {nomeSnapshot.split(' ')[0] + ' ' + nomeComposto()}</h1>}
         
       </div>
       <div className="bem-vindo2"></div>

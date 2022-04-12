@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, {  useState } from 'react';
 import '../styles/styles.scss'
 import Navbar from '../components/navbar';
 import Section from '../components/section';
@@ -22,7 +22,7 @@ const Cadastrar:React.FC = ()=> {
   const [endereco, setEndereco] = useState('')
   const [obs, setObs] = useState('')
   const [senha,setSenha] = useState('')
-  const [sex,setSex] = useState(undefined)
+  const [sex,setSex] = useState('O')
   const [session,setSession] = useState(false)
   const [succesComponent,setSuccesComponent] = useState(false)
 
@@ -50,7 +50,7 @@ const Cadastrar:React.FC = ()=> {
             obs={obs}
             senha={senha}
             sex={sex}
-            setsex={(event: { target: { value: React.SetStateAction<undefined>; }; }) => setSex(event.target.value)}
+            setsex={(event: { target: { value: React.SetStateAction<string>; }; }) => setSex(event.target.value)}
             setnome={(event: { target: { value: React.SetStateAction<string>; }; }) => setNome(event.target.value)}
             setdata={(event: { target: { value: React.SetStateAction<string>; }; }) => setData(event.target.value)}
             setcpf={(event: { target: { value: React.SetStateAction<string>; }; }) => setCpf(event.target.value)}
@@ -59,16 +59,18 @@ const Cadastrar:React.FC = ()=> {
             setobs={(event: { target: { value: React.SetStateAction<string>; }; }) => setObs(event.target.value)}
             setsenha={(event: { target: { value: React.SetStateAction<string>; }; }) => setSenha(event.target.value)}
             função={()=>{
-              Push(nome, data, cpf, cargo, endereco, obs, senha,session, sex)
-              setSex(undefined)
-              setNome('')
-              setData('')
-              setCpf('')
-              setCargo('')
-              setEndereco('')
-              setObs('')
-              setSenha('')
-              setSuccesComponent(true)
+              if(data !== '' && nome.length !== 0 && cpf.length !== 0 && cargo !== '' && endereco !== '' ){
+                Push(nome, data, cpf, cargo, endereco, obs, senha,session, sex)
+                setSex('O')
+                setNome('')
+                setData('')
+                setCpf('')
+                setCargo('')
+                setEndereco('')
+                setObs('')
+                setSenha('')
+                setSuccesComponent(true)
+              }
             }}
           />
           {succesComponent && <SuccesMensage func={() =>{setSuccesComponent(false)}}/>}

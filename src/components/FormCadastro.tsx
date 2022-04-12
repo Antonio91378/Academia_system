@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface FormCadastroProps {
     função : any;
@@ -23,15 +23,56 @@ interface FormCadastroProps {
     }
 
 const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, cargo, endereco, obs, senha,setnome,setdata,setcpf,setcargo,setendereco,setobs,setsenha, sex,setsex, setSession}) => {
+const [condition,setCondition]=useState(false)
+
+    const validation = (nome: any ) =>{
+        var erros = [4]
+        //condição 1
+        nome = nome;
+        // data = data;
+        // cpf = cpf;
+        // data: any, cpf: any, cargo: any, endereco: any, sex: any
+
+        if(nome.length === 0){
+            erros[0] = 1;
+            setCondition(true)
+        }
+
+        // if(nome.length === 0){
+        //     erros[0] = 1;
+        // }
+
+        // if(nome.length === 0){
+        //     erros[0] = 1;
+        // }
+
+        // if(nome.length === 0){
+        //     erros[0] = 1;
+        // }
+
+        // if(nome.length === 0){
+        //     erros[0] = 1;
+        // }
+        console.log(erros);
+    }
+
+
+
+
+
+
     return (
+
         <div >
             <div className="form-hero">
+  
                 <form className="cadastro" action="" onSubmit={(event) =>{
                     event.preventDefault();
                     função();
+                    validation(nome);
                     }
                     }>
-                    <div className="block-form">
+                    <div className="block-form ">
                         <div className='inputs' >
                             <label htmlFor="">Nome completo:</label>
                             <br />
@@ -41,7 +82,7 @@ const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, 
                         <div className='inputs'>
                             <label htmlFor="">Data de nascimento:</label>
                             <br />
-                            <div className='oi'><input value={data} onChange={setdata} type="text" /></div>
+                            <div className='oi'><input id='first-input' value={data} onChange={setdata} type="date" /></div>
                             
                         </div>
                     </div>
@@ -103,6 +144,24 @@ const FormCadastro: React.FC<FormCadastroProps> = ({ função, nome, data, cpf, 
                         <button  type='submit' id='cadastrar'>Cadastrar</button>
                     </div>
                 </form>
+               {condition && <div id="validation-errors">
+                        <div id="validation">
+                            <div id="validation-menssage">
+                                <p id='p1'>Falha ao cadastrar</p>
+                                <div id="a1"><button onClick={()=>{
+                                    setCondition(false);
+                                }} >X</button></div>
+                                
+                            </div>
+                            <div className="errors">
+                                <div className="error"><p>preencha o campo 'Nome completo'</p></div>
+                                <div className="error"><p>preencha o campo 'CPF'</p></div>
+                                <div className="error"><p>preencha o campo 'Cargo'</p></div>
+                                <div className="error"><p>preencha o campo 'Endereço'</p></div>
+                                <div className="error"><p>selecione o campo 'sexo'</p></div>
+                            </div>
+                        </div>
+                    </div>} 
             </div>
         </div>
     );
