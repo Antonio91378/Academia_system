@@ -355,6 +355,10 @@ body {
       }
       overflow: scroll;
       .usuario {
+        &:hover {
+          background-color: var(--hover);
+          cursor: pointer;
+        }
         display: grid;
         grid-template-columns: 1fr 2fr;
         border: solid 1px rgb(169, 135, 135);
@@ -594,6 +598,65 @@ $amount: 10px;
         color: rgb(200, 1, 1);
         font-weight: bold;
       }
+    }
+  }
+}
+
+#dark-bg {
+  background-color: #00000089;
+  left: -0vw;
+  top: 0;
+  position: absolute;
+  width: 99.8vw;
+  height: 99.5vh;
+  border: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.viewUser {
+  margin-left: 12vw;
+  width: 30vw;
+  height: 80vh;
+  position: relative;
+  background-color: white;
+  #close {
+    font-size: 2rem;
+    position: absolute;
+    left: 13vw;
+    top: -9vh;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+  }
+  .view1 {
+    display: flex;
+    margin: 1vw;
+    height: 13.5%;
+    .imgg {
+      border: 1px red solid;
+      width: 7vw;
+      // height: 10vh;
+    }
+    .view-info {
+      border: 1px red solid;
+      width: 100%;
+    }
+  }
+  .view0 {
+    display: flex;
+    flex-direction: column;
+    height: 78.5%;
+    .view2 {
+      margin: 0 1vw;
+      border: 1px solid red;
+      height: 100%;
+    }
+    .view3 {
+      margin-top: 1vw !important;
+      margin: 0 1vw;
+      border: 1px solid blue;
+      height: 100%;
     }
   }
 }

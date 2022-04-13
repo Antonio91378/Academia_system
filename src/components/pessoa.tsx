@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import SearchUser from './SearchUser';
 
 interface PessoaProps {
     nome?:any,
@@ -8,14 +9,27 @@ interface PessoaProps {
 }
 
 const Pessoa: React.FC<PessoaProps> = ({ nome,cpf,data,index }) => {
+    const[viewinfo,setViewinfo]=useState(false)
+
+
     return (
-        <div className="usuario">
-            <div className="img"></div>
-            <div className="info">
-                <p>{nome}</p>
-                <p>{cpf}</p>
-                <p>{data}</p>
-            </div>          
+        <div>
+            <div className="usuario" onClick={()=>{
+                setViewinfo(true);
+                
+            }}>
+                <div className="img"></div>
+                <div className="info">
+                    <p>{nome}</p>
+                    <p>{cpf}</p>
+                    <p>{data}</p>
+                </div>          
+            </div>
+            <div>
+            {viewinfo && <SearchUser parameter={()=>{
+                 setViewinfo(false);
+            }}/>}
+            </div>
         </div>
     );
 };
