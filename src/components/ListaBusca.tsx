@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { database } from '../services/firebase';
 import Pessoa from './pessoa';
-import Pessoas from './Pessoas';
 type Pessoass ={
     chave: string,
     nome: string,
@@ -14,6 +13,7 @@ type Pessoass ={
     endereco: string,
     obs: string,
     senha: string,
+    sex:string
   }
 
 
@@ -38,6 +38,7 @@ const ListaBusca: React.FC = () => {
                 'endereco': valor.endereco,
                 'obs': valor.obs,
                 'senha': valor.senha,
+                'sex':valor.sex,
             }
         })
     
@@ -82,12 +83,12 @@ const ListaBusca: React.FC = () => {
                     busca?.map(pessoa =>{
                         return(
                             
-                            <Pessoa nome={pessoa.nome} cpf={pessoa.cpf} data={pessoa.data}/>
+                            <Pessoa nome={pessoa.nome} cpf={pessoa.cpf} data={pessoa.data} cargo={pessoa.cargo} endereco={pessoa.endereco} obs={pessoa.obs} sex={pessoa.sex}/>
                         )
                     })
                     : pessoas?.map(pessoa =>{
                         return(
-                            <Pessoa nome={pessoa.nome} cpf={pessoa.cpf} data={pessoa.data}/>
+                            <Pessoa nome={pessoa.nome} cpf={pessoa.cpf} data={pessoa.data} cargo={pessoa.cargo} endereco={pessoa.endereco} obs={pessoa.obs} sex={pessoa.sex}/>
                         )
                     })
                 }

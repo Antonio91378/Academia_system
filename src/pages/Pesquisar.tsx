@@ -9,11 +9,8 @@ import MainHero from '../components/mainHero';
 import Footer from '../components/footer';
 import OptionBox from '../components/optionBox';
 import ListaBusca from '../components/ListaBusca';
-import Pessoa from '../components/pessoa'
-import Pessoas from '../components/Pessoas'
 import { push, ref, onValue, remove, update, child} from "firebase/database";
-import { database } from '../services/firebase'
-import SearchUser from '../components/SearchUser';
+
 
 // apenas coloque a tipagem do objeto do banco de dados 
 type Pessoass ={
