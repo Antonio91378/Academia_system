@@ -13,7 +13,8 @@ type Pessoass ={
     endereco: string,
     obs: string,
     senha: string,
-    sex:string
+    sex:string,
+    payment:string,
   }
 
 
@@ -39,6 +40,8 @@ const ListaBusca: React.FC = () => {
                 'obs': valor.obs,
                 'senha': valor.senha,
                 'sex':valor.sex,
+                'payment':valor.payment
+
             }
         })
     
@@ -88,7 +91,7 @@ const ListaBusca: React.FC = () => {
                     })
                     : pessoas?.map(pessoa =>{
                         return(
-                            <Pessoa nome={pessoa.nome} cpf={pessoa.cpf} data={pessoa.data} cargo={pessoa.cargo} endereco={pessoa.endereco} obs={pessoa.obs} sex={pessoa.sex}/>
+                            <Pessoa nome={pessoa.nome} cpf={pessoa.cpf} data={pessoa.data} cargo={pessoa.cargo} endereco={pessoa.endereco} obs={pessoa.obs} sex={pessoa.sex} payment={pessoa.payment}/>
                         )
                     })
                 }

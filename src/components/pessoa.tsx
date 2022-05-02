@@ -9,9 +9,10 @@ interface PessoaProps {
     endereco?:any,
     obs?:any,
     sex?:any,
+    payment?:any,
 }
 
-const Pessoa: React.FC<PessoaProps> = ({ nome,cpf,data,cargo,endereco,obs,sex }) => {
+const Pessoa: React.FC<PessoaProps> = ({ nome,cpf,data,cargo,endereco,obs,sex,payment }) => {
     const[viewinfo,setViewinfo]=useState(false)
 
 
@@ -29,7 +30,7 @@ const Pessoa: React.FC<PessoaProps> = ({ nome,cpf,data,cargo,endereco,obs,sex })
                 </div>          
             </div>
             <div>
-            {viewinfo && <SearchUser nome={nome} cpf={cpf} data={data} cargo={cargo} endereco={endereco} obs={obs} sex={sex} parameter={()=>{
+            {viewinfo && <SearchUser nome={nome} cpf={cpf} data={data} cargo={cargo} endereco={endereco} obs={obs} sex={sex} payment={payment} parameter={()=>{
                  setViewinfo(false);
             }}/>}
             </div>

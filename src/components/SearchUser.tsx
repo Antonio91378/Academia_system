@@ -9,9 +9,17 @@ interface SearchUserProps {
     endereco?:any,
     obs?:any,
     sex?:any,
+    payment?:any,
 }
 
-const SearchUser: React.FC<SearchUserProps> = ({ parameter,nome,cpf,data,cargo,endereco,obs,sex }) => {
+const SearchUser: React.FC<SearchUserProps> = ({ parameter,nome,cpf,data,cargo,endereco,obs,sex,payment }) => {
+    const pendencias = (payment:string)=>{
+        if (payment == 'sem pendencias'){
+            return (true)
+        }else if (payment == 'com pendencias'){
+            return (false)
+        }
+    }
     return (
         <div id='dark-bg'>
             <div className='viewUser'>
@@ -30,8 +38,9 @@ const SearchUser: React.FC<SearchUserProps> = ({ parameter,nome,cpf,data,cargo,e
                         <div>
                             <p>Cargo: {`${cargo}`}</p>
                             <p>Endereço: {endereco}</p>
-                            <p>Sexo:{sex} </p>
-                            <p>Observação:{obs}</p>
+                            <p>Sexo: {sex} </p>
+                            <p>Mensalidade: {pendencias(payment) && <span id='sem-pendencias'>sem pendências</span>}</p>
+                            <p>Observação: {obs}</p>
                             <p></p>
                         </div>
                     </div>

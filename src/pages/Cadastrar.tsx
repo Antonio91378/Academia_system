@@ -25,7 +25,7 @@ const Cadastrar:React.FC = ()=> {
   const [sex,setSex] = useState('O')
   const [session,setSession] = useState(false)
   const [succesComponent,setSuccesComponent] = useState(false)
-
+ const [payment,setPayment] = useState("sem pendencias")
   
   return (
     <div>
@@ -60,7 +60,7 @@ const Cadastrar:React.FC = ()=> {
             setsenha={(event: { target: { value: React.SetStateAction<string>; }; }) => setSenha(event.target.value)}
             função={()=>{
               if(data !== '' && nome.length !== 0 && cpf.length !== 0 && cargo !== '' && endereco !== '' ){
-                Push(nome, data, cpf, cargo, endereco, obs, senha,session, sex)
+                Push(nome, data, cpf, cargo, endereco, obs, senha,session, sex,payment)
                 setSex('O')
                 setNome('')
                 setData('')
