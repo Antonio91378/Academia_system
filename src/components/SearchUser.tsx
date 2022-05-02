@@ -26,24 +26,24 @@ const SearchUser: React.FC<SearchUserProps> = ({ parameter,nome,cpf,data,cargo,e
                 </div>
                 <div className="view0">
                     <div className="view2">
-                        <p>informações extras: <button>editar</button> </p>
-                        <p>Cargo: {`${cargo}`}</p>
-                        <p>Endereço: {endereco}</p>
-                        <p>Sexo:{sex} </p>
-                        <p>Observação:{obs}</p>
-                        <p></p>
+                        <p>informações adicionais <button>editar</button> </p>
+                        <div>
+                            <p>Cargo: {`${cargo}`}</p>
+                            <p>Endereço: {endereco}</p>
+                            <p>Sexo:{sex} </p>
+                            <p>Observação:{obs}</p>
+                            <p></p>
+                        </div>
                     </div>
                     <div className="view3">
                         <p>Situação de pagamento</p>
                         <div className="situacao">
                             <div className="mes-atual">
-                                <p>Mês atual</p>
                                 <div>
                                 <p>último pagamento efetuado em:</p>
-                                <button>Regularizar mês</button>
                                 </div>
-                                <p>=================</p>
-                                <p>Último pagamento válido até</p>
+                                <p>Último pagamento válido até:</p>
+                                <button>Atualizar pagamento</button>
                             </div>
                         </div>
                     </div>

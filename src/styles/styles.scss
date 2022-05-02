@@ -619,7 +619,7 @@ $amount: 10px;
   width: 30vw;
   height: 80vh;
   position: relative;
-  background-color: white;
+  background-color: var(--cor-bg-3);
   #close {
     font-size: 2rem;
     position: absolute;
@@ -634,13 +634,18 @@ $amount: 10px;
     margin: 1vw;
     height: 13.5%;
     .imgg {
-      border: 1px red solid;
+      background-color: var(--cor-bg-principal);
+      // border: 1px red solid;
       width: 7vw;
       // height: 10vh;
     }
     .view-info {
-      border: 1px red solid;
+      background-color: var(--cor-bg-principal);
+      // border: 1px red solid;
       width: 100%;
+      & > :first-child {
+        background-color: var(--cor-bg-secondary);
+      }
     }
   }
   .view0 {
@@ -648,15 +653,49 @@ $amount: 10px;
     flex-direction: column;
     height: 78.5%;
     .view2 {
+      background-color: var(--cor-bg-principal);
       margin: 0 1vw;
-      border: 1px solid red;
+      // border: 1px solid red;
       height: 100%;
+      & > :first-child {
+        padding-left: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: var(--cor-bg-secondary);
+      }
+      div {
+        overflow: scroll;
+        overflow-x: hidden;
+        height: 87%;
+        p {
+          padding: 0.2rem;
+          padding-left: 0.5rem;
+        }
+      }
     }
     .view3 {
+      position: relative;
       margin-top: 1vw !important;
       margin: 0 1vw;
-      border: 1px solid blue;
+      // border: 1px solid blue;
+      background-color: var(--cor-bg-principal);
       height: 100%;
+      & > :first-child {
+        padding-left: 0.5rem;
+        background-color: var(--cor-bg-secondary);
+      }
+      .mes-atual {
+        p {
+          padding: 0.2rem;
+          padding-left: 0.5rem;
+        }
+        & > :last-child {
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+        }
+      }
     }
   }
 }
